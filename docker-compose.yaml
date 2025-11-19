@@ -2,12 +2,19 @@ version: "3"
 
 services:
   n8n:
-    image: n8nio/n8n:1.44.0
+    image: n8nio/n8n:latest
     restart: always
     ports:
       - "5678:5678"
     environment:
+      # متغيرات المصادقة الأساسية
       - N8N_BASIC_AUTH_ACTIVE=true
       - N8N_BASIC_AUTH_USER=admin
-      - N8N_BASIC_AUTH_PASSWORD=admin518
+      - N8N_BASIC_AUTH_PASSWORD=admin518n518
+      
+      # متغيرات قاعدة البيانات PostgreSQL
+      - DB_TYPE=postgres
+      - N8N_POSTGRESDB_URL=postgres://postgres:Ksa518n123@db.bypuaavvyvvkknbcyfnp.supabase.co:5432/postgres
+      
+      # متغيرات الويب هوك (Webhook)
       - WEBHOOK_URL=https://your-service-name.onrender.com

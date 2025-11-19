@@ -5,17 +5,29 @@ services:
     plan: free
     dockerfilePath: ./Dockerfile
     envVars:
+      # متغيرات المصادقة الأساسية
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
       - key: N8N_BASIC_AUTH_USER
         value: "admin"
       - key: N8N_BASIC_AUTH_PASSWORD
-        value: "admin518"
+        value: "admin518n518" # تم تحديث القيمة لتطابق ما في Dockerfile الأصلي
+      
+      # متغيرات قاعدة البيانات PostgreSQL
+      - key: DB_TYPE
+        value: "postgres"
+      - key: N8N_POSTGRESDB_URL
+        value: "postgres://postgres:Ksa518n123@db.bypuaavvyvvkknbcyfnp.supabase.co:5432/postgres"
+      
+      # متغيرات الأمان والتشغيل
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
       - key: N8N_HOST
         value: "0.0.0.0"
       - key: N8N_PORT
         value: "5678"
+      
+      # متغيرات الويب هوك (Webhook)
+      # Render سيقوم بتعيين WEBHOOK_URL تلقائيًا عند النشر
       - key: WEBHOOK_URL
-        value: "https://your-subdomain.onrender.com"
+        value: "${{ env.RENDER_EXTERNAL_URL }}"
