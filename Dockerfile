@@ -10,11 +10,10 @@ FROM n8nio/n8n:latest
 # نصعد لصلاحية root لتثبيت الحزم
 USER root
 
-# تثبيت الحزم المطلوبة (googleapis, axios, node-telegram-bot-api)
-# يتم تثبيتها في مجلد n8n الرئيسي لضمان توفرها في Code/Function node
+# تثبيت الحزم المطلوبة بشكل عام (Globally) لتجنب مشاكل الـ workspace
+# هذا يكفي لكي يتعرف عليها n8n عند استخدام NODE_FUNCTION_ALLOW_EXTERNAL
 RUN npm install -g npm@latest \
- && cd /usr/local/lib/node_modules/n8n \
- && npm install googleapis axios node-telegram-bot-api
+ && npm install -g googleapis axios node-telegram-bot-api
 
 # عد للـ user الآمن الذي يستخدمه n8n
 USER node
