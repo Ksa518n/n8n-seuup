@@ -6,6 +6,8 @@ services:
     dockerfilePath: ./Dockerfile
     envVars:
       # متغيرات المصادقة الأساسية
+      - key: N8N_API_KEY_AUTH_ACTIVE
+        value: "true"
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
       - key: N8N_BASIC_AUTH_USER
