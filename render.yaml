@@ -16,22 +16,23 @@ services:
         value: "admin518n518"
 
       # PostgreSQL
-      - key: DB_TYPE
-        value: "postgres"
-      - key: DB_POSTGRES_HOST
-        value: "db.bypuaavvyvvkknbcyfnp.supabase.co"
-      - key: DB_POSTGRES_PORT
-        value: "5432"
-      - key: DB_POSTGRES_DATABASE
-        value: "postgres"
-      - key: DB_POSTGRES_SCHEMA
-        value: "public"
-      - key: DB_POSTGRES_USER
-        value: "postgres"
-      - key: DB_POSTGRES_PASSWORD
-        value: "Ksa518n123@"
-      - key: DB_SSL
-        value: "true"
+      # PostgreSQL
+- key: DB_TYPE
+  value: "postgresdb"
+- key: DB_POSTGRES_HOST
+  value: "db.bypuaavvyvvkknbcyfnp.supabase.co"
+- key: DB_POSTGRES_PORT
+  value: "5432"
+- key: DB_POSTGRES_DATABASE
+  value: "postgres"
+- key: DB_POSTGRES_SCHEMA
+  value: "public"
+- key: DB_POSTGRES_USER
+  value: "postgres"
+- key: DB_POSTGRES_PASSWORD
+  value: "Ksa518n123@"
+- key: DB_SSL
+  value: "true"
 
       # Permissions
       - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
