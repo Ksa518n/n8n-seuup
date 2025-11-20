@@ -5,7 +5,7 @@ services:
     plan: free
     dockerfilePath: ./Dockerfile
     envVars:
-      # متغيرات المصادقة الأساسية
+      # Basic Auth
       - key: N8N_API_KEY_AUTH_ACTIVE
         value: "true"
       - key: N8N_BASIC_AUTH_ACTIVE
@@ -14,29 +14,33 @@ services:
         value: "admin"
       - key: N8N_BASIC_AUTH_PASSWORD
         value: "admin518n518"
-      
-      # متغيرات قاعدة البيانات PostgreSQL (مفصلة لمرونة أكبر)
+
+      # PostgreSQL (Supabase)
       - key: DB_TYPE
-        value: "postgresdb"
+        value: "postgres"
       - key: DB_POSTGRES_HOST
         value: "db.bypuaavvyvvkknbcyfnp.supabase.co"
       - key: DB_POSTGRES_PORT
         value: "5432"
       - key: DB_POSTGRES_DATABASE
         value: "postgres"
+      - key: DB_POSTGRES_SCHEMA
+        value: "public"
       - key: DB_POSTGRES_USER
         value: "postgres"
       - key: DB_POSTGRES_PASSWORD
         value: "Ksa518n123@"
-      
-      # متغيرات الأمان والتشغيل
+      - key: DB_SSL
+        value: "true"
+
+      # Security
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
       - key: N8N_HOST
         value: "0.0.0.0"
       - key: N8N_PORT
         value: "5678"
-      
-      # متغيرات الويب هوك (Webhook)
+
+      # Webhook
       - key: WEBHOOK_URL
         value: "${{ env.RENDER_EXTERNAL_URL }}"
