@@ -5,15 +5,15 @@ services:
     plan: free
     dockerfilePath: ./Dockerfile
     envVars:
-      # Basic Auth
-      - key: N8N_API_KEY_AUTH_ACTIVE
-        value: "true"
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
       - key: N8N_BASIC_AUTH_USER
         value: "admin"
       - key: N8N_BASIC_AUTH_PASSWORD
         value: "admin518n518"
+
+      - key: N8N_API_KEY_AUTH_ACTIVE
+        value: "true"
 
       # PostgreSQL
       - key: DB_TYPE
@@ -33,11 +33,9 @@ services:
       - key: DB_POSTGRES_SSL
         value: "require"
 
-      # Permissions
       - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
         value: "true"
 
-      # Security & host
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
       - key: N8N_HOST
@@ -45,6 +43,5 @@ services:
       - key: N8N_PORT
         value: "5678"
 
-      # Webhook
       - key: WEBHOOK_URL
         value: "${{ env.RENDER_EXTERNAL_URL }}"
