@@ -14,12 +14,13 @@ services:
       - N8N_BASIC_AUTH_PASSWORD=admin518n518
       
       # متغيرات قاعدة البيانات PostgreSQL (مفصلة لمرونة أكبر)
-      - DB_TYPE=postgresdb
+      - DB_TYPE=postgres
       - DB_POSTGRES_HOST=db.bypuaavvyvvkknbcyfnp.supabase.co
       - DB_POSTGRES_PORT=5432
       - DB_POSTGRES_DATABASE=postgres
       - DB_POSTGRES_USER=postgres
       - DB_POSTGRES_PASSWORD=Ksa518n123@
-      
+      - DB_SSL=true
+      - DB_POSTGRES_SCHEMA=public
       # متغيرات الويب هوك (Webhook)
       - WEBHOOK_URL=https://your-service-name.onrender.com
