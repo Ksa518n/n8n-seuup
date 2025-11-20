@@ -30,7 +30,7 @@ services:
         value: "postgres"
       - key: DB_POSTGRES_PASSWORD
         value: "Ksa518n123@"
-      - key: DB_SSL
+      - key: DB_POSTGRES_SSL
         value: "true"
 
       # Permissions
