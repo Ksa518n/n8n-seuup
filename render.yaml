@@ -29,9 +29,9 @@ services:
       - key: DB_POSTGRESDB_USER
         value: "postgres"
       - key: DB_POSTGRESDB_PASSWORD
-        value: "كلمة_السر_حقك"
+        value: "Ksa518n123@"
       - key: DB_POSTGRESDB_SSL
-        value: "require"
+        value: "true"
       - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
         value: "false"
       - key: DB_POSTGRESDB_CONNECTION_TIMEOUT
