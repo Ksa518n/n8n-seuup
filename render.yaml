@@ -15,27 +15,11 @@ services:
       - key: N8N_API_KEY_AUTH_ACTIVE
         value: "true"
 
-      # PostgreSQL (Supabase)
+      # PostgreSQL (Supabase) - Final Solution using Connection String
       - key: DB_TYPE
         value: "postgresdb"
-      - key: DB_POSTGRESDB_HOST
-        value: "db.bypuaavvyvvkknbcyfnp.supabase.co"
-      - key: DB_POSTGRESDB_PORT
-        value: "5432"
-      - key: DB_POSTGRESDB_DATABASE
-        value: "postgres"
-      - key: DB_POSTGRESDB_SCHEMA
-        value: "public"
-      - key: DB_POSTGRESDB_USER
-        value: "postgres"
-      - key: DB_POSTGRESDB_PASSWORD
-        value: "Ksa518n123@"
-      - key: DB_POSTGRESDB_SSL
-        value: "true"
-      - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
-        value: "false"
-      - key: DB_POSTGRESDB_CONNECTION_TIMEOUT
-        value: "60000"
+      - key: DB_POSTGRESDB_URL
+        value: "postgresql://postgres.bypuaavvyvvkknbcyfnp:Asd0556626357@aws-0-us-east-1.pooler.supabase.com:5432/postgres?sslmode=require"
 
       - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
         value: "true"
