@@ -49,3 +49,5 @@ services:
 
       - key: WEBHOOK_URL
         value: "${{ env.RENDER_EXTERNAL_URL }}"
+      - key: N8N_TRUST_PROXY
+        value: "true"
