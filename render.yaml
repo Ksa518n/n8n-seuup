@@ -15,11 +15,11 @@ services:
       - key: N8N_API_KEY_AUTH_ACTIVE
         value: "true"
 
-      # PostgreSQL (مصحح)
+      # PostgreSQL (Supabase)
       - key: DB_TYPE
         value: "postgresdb"
       - key: DB_POSTGRESDB_HOST
-        value: "3.223.15.252"
+        value: "db.bypuaavvyvvkknbcyfnp.supabase.co"
       - key: DB_POSTGRESDB_PORT
         value: "5432"
       - key: DB_POSTGRESDB_DATABASE
@@ -29,9 +29,9 @@ services:
       - key: DB_POSTGRESDB_USER
         value: "postgres"
       - key: DB_POSTGRESDB_PASSWORD
-        value: "Ksa518n123@"
+        value: "كلمة_السر_حقك"
       - key: DB_POSTGRESDB_SSL
-        value: "true"
+        value: "require"
       - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
         value: "false"
       - key: DB_POSTGRESDB_CONNECTION_TIMEOUT
