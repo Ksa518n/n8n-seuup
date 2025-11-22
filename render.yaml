@@ -15,7 +15,7 @@ services:
       - key: N8N_API_KEY_AUTH_ACTIVE
         value: "true"
 
-      # PostgreSQL (Supabase) - Final Solution using Connection String
+      # PostgreSQL (Supabase) - Final Solution using separate variables for robustness
       - key: DB_TYPE
         value: "postgresdb"
       - key: DB_POSTGRESDB_SCHEMA
@@ -34,7 +34,6 @@ services:
         value: "true"
       - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
         value: "false"
-
 
       - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
         value: "true"
