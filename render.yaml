@@ -16,7 +16,10 @@ services:
         value: "true"
 
       # PostgreSQL (Supabase) - Final Solution using separate variables for robustness
-      # DB_TYPE و DB_POSTGRESDB_URL يجب تعيينهما في لوحة تحكم Render لضمان الأولوية
+      - key: DB_TYPE
+        value: "postgresdb"
+      - key: DB_POSTGRESDB_URL
+        value: "postgresql://postgres.bypuaavvyvvkknbcyfnp:Ksa518n123Ksa518n@aws-0-us-east-1.pooler.supabase.com:5432/postgres"
 
       - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
         value: "true"
