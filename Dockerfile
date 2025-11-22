@@ -25,5 +25,4 @@ ENV NODE_FUNCTION_ALLOW_EXTERNAL=googleapis,axios,node-telegram-bot-api
 
 # لا تغيّر ENTRYPOINT — نستخدم الافتراضي من الصورة الأصلية
 
-# إضافة أمر تشغيل الترحيل يدوياً قبل بدء n8n لضمان إنشاء الجداول
-CMD ["/bin/sh", "-c", "n8n migrate && n8n start"]
+# لا تغيّر ENTRYPOINT — نستخدم الافتراضي من الصورة الأصلية
