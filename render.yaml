@@ -31,7 +31,7 @@ services:
       - key: DB_POSTGRESDB_PASSWORD
         value: "Asd0556626357"
       - key: DB_POSTGRESDB_SSL
-        value: "true"
+        value: "false"
       - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
         value: "false"
 
