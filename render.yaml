@@ -29,4 +29,15 @@ services:
 
       # متغيرات قاعدة البيانات (يجب تعيينها في لوحة تحكم Render)
       # يتم تركها فارغة هنا لضمان استخدام المتغيرات في لوحة التحكم
-      # DB_TYPE و DB_POSTGRESDB_URL سيتم تعيينهما في لوحة تحكم Render
+            - key: DB_TYPE
+        value: postgresdb
+      - key: DB_POSTGRESDB_HOST
+        value: dpg-d4gq847diees73b3kgmg-a
+      - key: DB_POSTGRESDB_PORT
+        value: 5432
+      - key: DB_POSTGRESDB_DATABASE
+        value: n8n_seuup
+      - key: DB_POSTGRESDB_USER
+        value: n8n_seuup_user
+      - key: DB_POSTGRESDB_PASSWORD
+        value: 6UyjuU11j9xIKzsjD6my3D8FZ1fbHvrI
