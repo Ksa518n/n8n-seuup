@@ -44,9 +44,9 @@ services:
       # متغير إضافي لضمان عدم استخدام SQLite
       # متغيرات Google OAuth (يجب ملؤها في لوحة تحكم Render)
       - key: N8N_GOOGLE_CLIENT_ID
-        value: ""
+        value: "975198101061-ta23p75oo04d9g6llvj0m5r0io0u9civ.apps.googleusercontent.com"
       - key: N8N_GOOGLE_CLIENT_SECRET
-        value: ""
+        value: "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"
 
       - key: DB_SQLITE_FILE
         value: ""
