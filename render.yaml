@@ -27,23 +27,10 @@ services:
       - key: N8N_BASIC_AUTH_PASSWORD
         value: "admin518n518"
 
-      # متغيرات قاعدة البيانات الخارجية (PostgreSQL)
-      - key: DB_TYPE
-        value: postgresdb
-      - key: DB_POSTGRESDB_HOST
-        value: dpg-d4gq847diees73b3kgmg-a.frankfurt-postgres.render.com
-      - key: DB_POSTGRESDB_PORT
-        value: 5432
-      - key: DB_POSTGRESDB_DATABASE
-        value: n8n_seuup
-      - key: DB_POSTGRESDB_USER
-        value: n8n_seuup_user
-      - key: DB_POSTGRESDB_PASSWORD
-        value: 6UyjuU11j9xIKzsjD6my3D8FZ1fbHvrI
-      
-      # الحل لمشكلة "SSL/TLS required"
-      - key: DB_POSTGRESDB_SSL
-        value: "true"
+      # الحل النهائي لمشكلة قاعدة البيانات: استخدام DB_URL مع خيار SSL=true
+      # هذا يفرض الاتصال الآمن دون الاعتماد على متغيرات Render المنفصلة
+      - key: DB_URL
+        value: postgresql://n8n_seuup_user:6UyjuU11j9xIKzsjD6my3D8FZ1fbHvrI@dpg-d4gq847diees73b3kgmg-a.frankfurt-postgres.render.com/n8n_seuup?ssl=true
       
       # متغير إضافي لضمان عدم استخدام SQLite
       - key: DB_SQLITE_FILE
