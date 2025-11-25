@@ -27,5 +27,20 @@ services:
       - key: N8N_BASIC_AUTH_PASSWORD
         value: "admin518n518"
 
-      # لا توجد متغيرات لقاعدة البيانات هنا. سيستخدم n8n قاعدة بيانات SQLite الافتراضية.
-      # تحذير: سيتم فقدان البيانات عند كل إعادة نشر أو إعادة تشغيل.
+      # تكوين قاعدة بيانات MySQL الخارجية (Railway)
+      - key: DB_TYPE
+        value: mysqldb
+      - key: DB_MYSQLDB_HOST
+        value: switchback.proxy.rlwy.net
+      - key: DB_MYSQLDB_PORT
+        value: 59149
+      - key: DB_MYSQLDB_DATABASE
+        value: railway
+      - key: DB_MYSQLDB_USER
+        value: root
+      - key: DB_MYSQLDB_PASSWORD
+        value: RRDbUJGpOBERkOMrSfcmQfEJhZCNCVkH
+      
+      # متغير إضافي لضمان عدم استخدام SQLite
+      - key: DB_SQLITE_FILE
+        value: ""
