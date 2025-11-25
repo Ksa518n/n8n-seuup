@@ -27,11 +27,32 @@ services:
       - key: N8N_BASIC_AUTH_PASSWORD
         value: "admin518n518"
 
-      # الحل النهائي لمشكلة قاعدة البيانات: استخدام DB_URL مع خيار SSL=true
-      # هذا يفرض الاتصال الآمن دون الاعتماد على متغيرات Render المنفصلة
-      - key: DB_URL
-        value: postgresql://n8n_seuup_user:6UyjuU11j9xIKzsjD6my3D8FZ1fbHvrI@dpg-d4gq847diees73b3kgmg-a.frankfurt-postgres.render.com/n8n_seuup?ssl=true
+      # تكوين قاعدة بيانات Render PostgreSQL الداخلية
+      # سيتم استخدام متغيرات الاتصال التي يوفرها Render تلقائياً
+      - key: DB_TYPE
+        value: postgresdb
+      - key: DB_POSTGRESDB_HOST
+        fromDatabase: n8n-db
+      - key: DB_POSTGRESDB_PORT
+        fromDatabase: n8n-db
+      - key: DB_POSTGRESDB_DATABASE
+        fromDatabase: n8n-db
+      - key: DB_POSTGRESDB_USER
+        fromDatabase: n8n-db
+      - key: DB_POSTGRESDB_PASSWORD
+        fromDatabase: n8n-db
+      
+      # الحل لمشكلة "SSL/TLS required" (Render توفر الاتصال الآمن داخلياً)
+      - key: DB_POSTGRESDB_SSL
+        value: "true"
       
       # متغير إضافي لضمان عدم استخدام SQLite
       - key: DB_SQLITE_FILE
         value: ""
+
+# تعريف قاعدة البيانات التي سيتم ربطها
+databases:
+  - name: n8n-db
+    plan: starter
+    databaseName: n8n_db
+    user: n8n_user
