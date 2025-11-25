@@ -1,0 +1,50 @@
+services:
+  - type: web
+    name: n8n-seuup
+    env: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    envVars:
+      # متغيرات البيئة الأساسية لـ n8n
+      - key: N8N_HOST
+        value: 0.0.0.0
+      - key: N8N_PORT
+        value: 5678
+      - key: WEBHOOK_URL
+        value: ${{ env.RENDER_EXTERNAL_URL }}
+      - key: N8N_TRUST_PROXY
+        value: "true"
+      - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
+        value: "true"
+      - key: N8N_ENCRYPTION_KEY
+        generateValue: true
+
+      # متغيرات المصادقة (Authentication)
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: "true"
+      - key: N8N_BASIC_AUTH_USER
+        value: "admin"
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: "admin518n518"
+
+      # متغيرات قاعدة البيانات الخارجية (PostgreSQL)
+      - key: DB_TYPE
+        value: postgresdb
+      - key: DB_POSTGRESDB_HOST
+        value: dpg-d4gq847diees73b3kgmg-a.frankfurt-postgres.render.com
+      - key: DB_POSTGRESDB_PORT
+        value: 5432
+      - key: DB_POSTGRESDB_DATABASE
+        value: n8n_seuup
+      - key: DB_POSTGRESDB_USER
+        value: n8n_seuup_user
+      - key: DB_POSTGRESDB_PASSWORD
+        value: 6UyjuU11j9xIKzsjD6my3D8FZ1fbHvrI
+      
+      # الحل لمشكلة "SSL/TLS required"
+      - key: DB_POSTGRESDB_SSL
+        value: "true"
+      
+      # متغير إضافي لضمان عدم استخدام SQLite
+      - key: DB_SQLITE_FILE
+        value: ""
