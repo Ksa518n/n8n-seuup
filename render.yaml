@@ -16,7 +16,7 @@ services:
         value: "1"
       # زيادة الذاكرة المخصصة لـ Node.js لحل مشكلة نفاد الذاكرة (OOM)
       - key: NODE_OPTIONS
-        value: "--max-old-space-size=1024"
+        value: "--max-old-space-size=2048"
       - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
         value: "true"
       - key: N8N_ENCRYPTION_KEY
