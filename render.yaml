@@ -11,16 +11,16 @@ services:
       - key: N8N_PORT
         value: 5678
       - key: WEBHOOK_URL
-        value: ${{ env.RENDER_EXTERNAL_URL }}
+        value: https://n8n-seuup.onrender.com
       - key: N8N_TRUST_PROXY
         value: "true"
-      # زيادة الذاكرة المخصصة لـ Node.js لحل مشكلة نفاد الذاكرة (OOM)
+      # إضافة متغير NODE_OPTIONS الضروري لتجنب أخطاء الذاكرة
       - key: NODE_OPTIONS
         value: "--max-old-space-size=512"
       - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
         value: "true"
       - key: N8N_ENCRYPTION_KEY
-        generateValue: true
+        value: Djfhurerhr638dhfbhr7h37urhr7urhr7
 
       # متغيرات المصادقة (Authentication)
       - key: N8N_BASIC_AUTH_ACTIVE
@@ -28,9 +28,9 @@ services:
       - key: N8N_BASIC_AUTH_USER
         value: "admin"
       - key: N8N_BASIC_AUTH_PASSWORD
-        value: "admin518n518"
+        value: admin518n518
 
-      # تكوين قاعدة بيانات MySQL الخارجية (Railway) - التكوين القديم مع البيانات الجديدة
+      # تكوين قاعدة بيانات MySQL الخارجية (Railway) - البيانات الجديدة
       - key: DB_TYPE
         value: mysqldb
       - key: DB_MYSQLDB_HOST
@@ -44,12 +44,8 @@ services:
       - key: DB_MYSQLDB_PASSWORD
         value: YgXlHactjFhtJBnbOKSNsBgegaMnyhMX
       
-      # متغيرات Google OAuth (يجب ملؤها في لوحة تحكم Render)
+      # متغيرات Google OAuth
       - key: N8N_GOOGLE_CLIENT_ID
-        value: "975198101061-ta23p75oo04d9g6llvj0m5r0io0u9civ.apps.googleusercontent.com"
+        value: 975198101061-ta23p75oo04d9g6llvj0m5r0io0u9civ.apps.googleusercontent.com
       - key: N8N_GOOGLE_CLIENT_SECRET
-        value: "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"
-
-      # إزالة متغير DB_SQLITE_FILE لضمان استخدام MySQL
-      # - key: DB_SQLITE_FILE
-      #   value: ""
+        value: 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
