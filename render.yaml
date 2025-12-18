@@ -30,21 +30,13 @@ services:
       - key: N8N_BASIC_AUTH_PASSWORD
         value: "admin518n518"
 
-      # تكوين قاعدة بيانات PostgreSQL الخارجية (Railway) - التكوين الصحيح
+      # تكوين قاعدة بيانات PostgreSQL الخارجية (Railway) - باستخدام سلسلة الاتصال الكاملة
       - key: DB_TYPE
         value: postgresdb
-      - key: DB_POSTGRESDB_HOST
-        value: yamabiko.proxy.rlwy.net
-      - key: DB_POSTGRESDB_PORT
-        value: 24022
-      - key: DB_POSTGRESDB_DATABASE
-        value: railway
-      - key: DB_POSTGRESDB_USER
-        value: postgres
-      - key: DB_POSTGRESDB_PASSWORD
-        value: WcZavbeCekEEGtPVTwuogKAzqCltQEuR
+      - key: DB_POSTGRESDB_URL
+        value: postgresql://postgres:WcZavbeCekEEGtPVTwuogKAzqCltQEuR@yamabiko.proxy.rlwy.net:24022/railway
       
-      # إعدادات SSL للاتصال بقاعدة بيانات Railway
+      # إعدادات SSL للاتصال بقاعدة بيانات Railway (لا تزال مطلوبة حتى مع سلسلة الاتصال)
       - key: DB_POSTGRESDB_SSL_ENABLED
         value: "true"
       - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
