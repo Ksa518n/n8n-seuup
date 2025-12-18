@@ -30,24 +30,26 @@ services:
       - key: N8N_BASIC_AUTH_PASSWORD
         value: "admin518n518"
 
-      # تكوين قاعدة بيانات PostgreSQL الخارجية (Railway) - التكوين الصحيح (مع تفعيل SSL)
+      # تكوين قاعدة بيانات PostgreSQL الخارجية (Railway) - التكوين الصحيح
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_HOST
-        value: shortline.proxy.rlwy.net
+        value: yamabiko.proxy.rlwy.net
       - key: DB_POSTGRESDB_PORT
-        value: 16844
+        value: 24022
       - key: DB_POSTGRESDB_DATABASE
         value: railway
       - key: DB_POSTGRESDB_USER
         value: postgres
       - key: DB_POSTGRESDB_PASSWORD
-        value: wvMIVyjIEziIwCNzAxTKkwOPBHNmblcg
+        value: WcZavbeCekEEGtPVTwuogKAzqCltQEuR
+      
+      # إعدادات SSL للاتصال بقاعدة بيانات Railway
       - key: DB_POSTGRESDB_SSL_ENABLED
         value: "true"
       - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
         value: "false"
-      
+
       # متغيرات Google OAuth (يجب ملؤها في لوحة تحكم Render)
       - key: N8N_GOOGLE_CLIENT_ID
         value: "975198101061-ta23p75oo04d9g6llvj0m5r0io0u9civ.apps.googleusercontent.com"
