@@ -30,24 +30,26 @@ services:
       - key: N8N_BASIC_AUTH_PASSWORD
         value: "admin518n518"
 
-      # تكوين قاعدة بيانات PostgreSQL الخارجية (Railway) - باستخدام سلسلة الاتصال الكاملة
+      # تكوين قاعدة بيانات MySQL الخارجية (Railway) - التكوين القديم مع البيانات الجديدة
       - key: DB_TYPE
-        value: postgresdb
-      - key: DB_POSTGRESDB_URL
-        value: postgresql://postgres:WcZavbeCekEEGtPVTwuogKAzqCltQEuR@yamabiko.proxy.rlwy.net:24022/railway
+        value: mysqldb
+      - key: DB_MYSQLDB_HOST
+        value: gondola.proxy.rlwy.net
+      - key: DB_MYSQLDB_PORT
+        value: 37716
+      - key: DB_MYSQLDB_DATABASE
+        value: railway
+      - key: DB_MYSQLDB_USER
+        value: root
+      - key: DB_MYSQLDB_PASSWORD
+        value: YgXlHactjFhtJBnbOKSNsBgegaMnyhMX
       
-      # إعدادات SSL للاتصال بقاعدة بيانات Railway (لا تزال مطلوبة حتى مع سلسلة الاتصال)
-      - key: DB_POSTGRESDB_SSL_ENABLED
-        value: "true"
-      - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
-        value: "false"
-
       # متغيرات Google OAuth (يجب ملؤها في لوحة تحكم Render)
       - key: N8N_GOOGLE_CLIENT_ID
         value: "975198101061-ta23p75oo04d9g6llvj0m5r0io0u9civ.apps.googleusercontent.com"
       - key: N8N_GOOGLE_CLIENT_SECRET
         value: "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"
 
-      # إزالة متغير DB_SQLITE_FILE لضمان استخدام PostgreSQL
+      # إزالة متغير DB_SQLITE_FILE لضمان استخدام MySQL
       # - key: DB_SQLITE_FILE
       #   value: ""
