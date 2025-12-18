@@ -30,26 +30,28 @@ services:
       - key: N8N_BASIC_AUTH_PASSWORD
         value: "admin518n518"
 
-      # تكوين قاعدة بيانات MySQL الخارجية (Railway)
+      # تكوين قاعدة بيانات PostgreSQL الخارجية (Railway)
+      # تم تغيير DB_TYPE إلى postgresdb لأن دعم MySQL تم إهماله في n8n v1.0+
       - key: DB_TYPE
-        value: mysqldb
-      - key: DB_MYSQLDB_HOST
+        value: postgresdb
+      # تم تغيير أسماء المتغيرات من DB_MYSQLDB_... إلى DB_POSTGRESDB_...
+      - key: DB_POSTGRESDB_HOST
         value: switchback.proxy.rlwy.net
-      - key: DB_MYSQLDB_PORT
+      - key: DB_POSTGRESDB_PORT
         value: 59149
-      - key: DB_MYSQLDB_DATABASE
+      - key: DB_POSTGRESDB_DATABASE
         value: railway
-      - key: DB_MYSQLDB_USER
+      - key: DB_POSTGRESDB_USER
         value: root
-      - key: DB_MYSQLDB_PASSWORD
+      - key: DB_POSTGRESDB_PASSWORD
         value: RRDbUJGpOBERkOMrSfcmQfEJhZCNCVkH
       
-      # متغير إضافي لضمان عدم استخدام SQLite
       # متغيرات Google OAuth (يجب ملؤها في لوحة تحكم Render)
       - key: N8N_GOOGLE_CLIENT_ID
         value: "975198101061-ta23p75oo04d9g6llvj0m5r0io0u9civ.apps.googleusercontent.com"
       - key: N8N_GOOGLE_CLIENT_SECRET
         value: "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"
 
-      - key: DB_SQLITE_FILE
-        value: ""
+      # إزالة متغير DB_SQLITE_FILE لضمان استخدام PostgreSQL
+      # - key: DB_SQLITE_FILE
+      #   value: ""
