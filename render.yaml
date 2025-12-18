@@ -30,7 +30,7 @@ services:
       - key: N8N_BASIC_AUTH_PASSWORD
         value: "admin518n518"
 
-      # تكوين قاعدة بيانات PostgreSQL الخارجية (Railway) - التكوين الصحيح
+      # تكوين قاعدة بيانات PostgreSQL الخارجية (Railway) - التكوين الصحيح (مع تفعيل SSL)
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_HOST
@@ -43,6 +43,10 @@ services:
         value: postgres
       - key: DB_POSTGRESDB_PASSWORD
         value: wvMIVyjIEziIwCNzAxTKkwOPBHNmblcg
+      - key: DB_POSTGRESDB_SSL_ENABLED
+        value: "true"
+      - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
+        value: "false"
       
       # متغيرات Google OAuth (يجب ملؤها في لوحة تحكم Render)
       - key: N8N_GOOGLE_CLIENT_ID
