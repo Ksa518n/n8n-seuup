@@ -43,6 +43,9 @@ services:
         value: ksa555_user
       - key: DB_POSTGRESDB_PASSWORD
         value: j1mAOLNa8YxPzSM1YoWwy2lIkJV1qDwT
+      # إعدادات SSL الضرورية للاتصال بقواعد البيانات السحابية
+      - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
+        value: "false"
       
       # متغيرات Google OAuth
       - key: N8N_GOOGLE_CLIENT_ID
