@@ -1,5 +1,5 @@
-# استخدام أحدث صورة رسمية لـ n8n
-FROM n8nio/n8n:2.3.4
+# استخدام أحدث صورة رسمية مستقرة لـ n8n
+FROM n8nio/n8n:latest
 
 # يمكن إضافة أي حزم إضافية هنا إذا لزم الأمر
 # RUN npm install -g some-package
