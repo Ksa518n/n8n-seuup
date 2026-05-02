@@ -21,7 +21,6 @@ services:
         value: "true"
       - key: N8N_ENCRYPTION_KEY
         value: Djfhurerhr638dhfbhr7h37urhr7urhr7
-
       # متغيرات المصادقة (Authentication)
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
@@ -29,20 +28,19 @@ services:
         value: "admin"
       - key: N8N_BASIC_AUTH_PASSWORD
         value: admin518n518
-
-      # تكوين قاعدة بيانات PostgreSQL على Render - البيانات الجديدة
+      # تكوين قاعدة بيانات PostgreSQL على Supabase
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_HOST
-        value: dpg-d76a9l0ule4c73eq5bt0-a
+        value: db.ezbubjsdiuwmigbsmxit.supabase.co
       - key: DB_POSTGRESDB_PORT
         value: 5432
       - key: DB_POSTGRESDB_DATABASE
-        value: ksa555
+        value: postgres
       - key: DB_POSTGRESDB_USER
-        value: ksa555_user
+        value: postgres
       - key: DB_POSTGRESDB_PASSWORD
-        value: j1mAOLNa8YxPzSM1YoWwy2lIkJV1qDwT
+        value: Asd050427Asd
       # إعدادات SSL الضرورية للاتصال بقواعد البيانات السحابية
       - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
         value: "false"
