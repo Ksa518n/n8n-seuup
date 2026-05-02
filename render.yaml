@@ -8,13 +8,13 @@ services:
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_HOST
-        value: db.ezbubjsdiuwmigbsmxit.supabase.co
+        value: aws-0-us-east-1.pooler.supabase.com
       - key: DB_POSTGRESDB_PORT
-        value: "5432"
+        value: "6543"
       - key: DB_POSTGRESDB_DATABASE
         value: postgres
       - key: DB_POSTGRESDB_USER
-        value: postgres
+        value: postgres.ezbubjsdiuwmigbsmxit
       - key: DB_POSTGRESDB_PASSWORD
         value: Asd050427Asd
       - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
@@ -40,6 +40,6 @@ services:
       - key: WEBHOOK_URL
         value: https://n8n-seuup.onrender.com
       - key: N8N_GOOGLE_CLIENT_ID
-        value: 975198101061-ta23p75oo04d9g6llvj0m5r0io0u9civ.apps.googleusercontent.com
+        value: 975198101061-ta23p75oo04d9g611vj0m5r0io0u9civ.apps.googleusercontent.com
       - key: N8N_GOOGLE_CLIENT_SECRET
-        value: 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
+        value: GOCSPX-dwol8q4Hw63Hi jKsPfW8LeG4Asd6
