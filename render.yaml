@@ -8,15 +8,15 @@ services:
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_HOST
-        value: aws-0-us-east-1.pooler.supabase.com
+        value: dpg-d7rfn79j2pic73f9nlq0-a
       - key: DB_POSTGRESDB_PORT
-        value: "6543"
+        value: "5432"
       - key: DB_POSTGRESDB_DATABASE
-        value: postgres
+        value: n8n_d4nn
       - key: DB_POSTGRESDB_USER
-        value: postgres.ezbubjsdiuwmigbsmxit
+        value: n8n_d4nn_user
       - key: DB_POSTGRESDB_PASSWORD
-        value: Asd050427Asd
+        value: vPsVL8LMl9kqPXtvmykYoTeOn15m1k6O
       - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
         value: "false"
       - key: N8N_BASIC_AUTH_ACTIVE
